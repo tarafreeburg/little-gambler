@@ -3,7 +3,9 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #0088ff;
+    background-image: url('images/navbar.png');
+    background-size: cover;
+    background-position: center;
     display: flex;
     align-items: center;
 }
@@ -28,13 +30,9 @@ li a:hover {
     background-color: #01549c;
 }
 
-li logo {
-    display: flex;
-    color: white;
-    text-align: center;
-    align-items: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 60px;
+body,
+html {
+    margin: 0;
+    padding: 0;
     height: 100%;
 }
