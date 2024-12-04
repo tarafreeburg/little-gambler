@@ -28,15 +28,5 @@
         "awayTeam": "West Ham",
         "fixtureId": 1208159,
         "active": true
-    },
-    {
-        "value": "Draw",
-        "odd": 8,
-        "betAmount": 1000,
-        "potentialWinnings": 8000,
-        "homeTeam": "Ipswich",
-        "awayTeam": "Crystal Palace",
-        "fixtureId": 1208158,
-        "active": true
     }
 ]

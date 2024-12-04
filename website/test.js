@@ -90,9 +90,9 @@ function showPrompt(value, odd, bookmaker, homeTeam, awayTeam, fixtureId) {
     let userResponse;
 
     while (true) {
-        // Step 1: Ask user for a bet
+        // Step 1: Ask user for a bet with a prompt for monetary input (e.g., $100.00)
         userResponse = prompt(
-            `Bookmaker: ${bookmaker}\nValue: ${value}\nOdd: ${odd}\n\nPlease enter an integer for your bet:`
+            `Bookmaker: ${bookmaker}\nValue: ${value}\nOdd: ${odd}\n\nPlease enter your bet amount (up to $1,000,000, up to two decimal places):`
         );
 
         if (userResponse === null) {
@@ -100,18 +100,25 @@ function showPrompt(value, odd, bookmaker, homeTeam, awayTeam, fixtureId) {
             return;
         }
 
-        userResponse = parseInt(userResponse, 10); // Convert input to integer
-        if (!isNaN(userResponse) && Number.isInteger(userResponse)) {
+        // Convert input to a floating-point number
+        userResponse = parseFloat(userResponse);
+
+        // Validate input: Must be a valid number, an integer or a decimal with two places, and not exceed $1,000,000
+        if (!isNaN(userResponse) && userResponse > 0 && userResponse <= 1000000 && /^[0-9]+(\.[0-9]{1,2})?$/.test(userResponse.toString())) {
             break;
         } else {
-            alert("Invalid input. Please enter a valid integer.");
+            alert("Invalid input. Please enter a valid amount (e.g., 100.00) up to $1,000,000 with no more than two decimal places.");
         }
     }
 
-    // Step 2: Check the input
-    const potentialWinnings = userResponse * parseFloat(odd);
+    // Step 2: Calculate and format the potential winnings to two decimal places
+    const potentialWinnings = (userResponse * parseFloat(odd)).toFixed(2);
+
+    // Convert potentialWinnings to a number if needed to store it as a numeric value
+    const potentialWinningsNum = parseFloat(potentialWinnings);
+
     const confirmation = confirm(
-        `You entered $${userResponse}.\nBased on odds (${odd}), your total return on a win would be $${potentialWinnings}.\n\nPress OK to confirm your bet.`
+        `You entered $${userResponse.toFixed(2)}.\nBased on odds (${odd}), your total return on a win would be $${potentialWinningsNum.toFixed(2)}.\n\nPress OK to confirm your bet.`
     );
 
     if (!confirmation) {
@@ -124,7 +131,7 @@ function showPrompt(value, odd, bookmaker, homeTeam, awayTeam, fixtureId) {
         value,
         odd: parseFloat(odd),
         betAmount: userResponse,
-        potentialWinnings,
+        potentialWinnings: potentialWinningsNum, // Save as a number with two decimal places
         homeTeam,
         awayTeam,
         fixtureId,
@@ -133,6 +140,7 @@ function showPrompt(value, odd, bookmaker, homeTeam, awayTeam, fixtureId) {
 
     saveBetToFile(betData);
 }
+
 
 async function saveBetToFile(betData) {
     try {
