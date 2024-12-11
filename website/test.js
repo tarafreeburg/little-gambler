@@ -40,8 +40,8 @@ async function displayData(data) {
         matchElement.classList.add("match");
         matchElement.innerHTML = `
             <hr>
-            <p>${formattedDateTime}</p>
-            <p><strong>${homeTeam}</strong> vs <strong>${awayTeam}</strong></p>
+            <p class="match-date">${formattedDateTime}</p>
+            <p class="match-teams"><strong>${homeTeam}</strong> vs <strong>${awayTeam}</strong></p>
             <div class="odds" id="odds-${fixtureID}">Loading odds...</div>
         `;
 
@@ -71,9 +71,9 @@ async function fetchOdds(fixtureId, elementId, homeTeam, awayTeam) {
             const formattedOdds = odds.map(
                 (odd) =>
                     `<button type="button" onclick="showPrompt('${odd.value}', '${odd.odd}', '${bookmaker}', '${homeTeam}', '${awayTeam}', ${fixtureId})">
-                        ${odd.value}: ${odd.odd}
+                        ${odd.value}: ${odd.odd}x
                     </button>`
-            ).join("");
+            ).join("      ");
             oddsElement.innerHTML = `${formattedOdds}`;
         } else {
             oddsElement.innerHTML = "Odds not available.";

@@ -1,3 +1,15 @@
+/* General */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #d1e7ff;
+    color: #333;
+}
+
+/* Navigation Bar */
 ul {
     list-style-type: none;
     margin: 0;
@@ -7,32 +19,128 @@ ul {
     background-size: cover;
     background-position: center;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 li {
-    float: left;
-    font-family: Arial, Helvetica, sans-serif;
+    flex: 1;
 }
 
 li a {
-    display: flex;
+    display: block;
     color: white;
     text-align: center;
-    align-items: center;
-    padding: 14px 16px;
+    padding: 20px;
     text-decoration: none;
-    font-size: 60px;
-    height: 100%;
+    font-size: 26px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 li a:hover {
     background-color: #01549c;
+    transform: scale(1.05);
 }
 
-body,
-html {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+/* Page Headers */
+h1 {
+    font-size: 36px;
+    text-align: center;
+    color: #01549c;
+    margin: 20px 0;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+}
+
+/* Containers */
+#data-container,
+#bets-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 2px solid #c9c9c9;
+    font-size: 26px;
+}
+
+/* Date Style */
+.match-date {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Team Names Style */
+.match-teams {
+    font-size: 36px;
+    color: #01549c;
+    margin: 10px 0;
+}
+
+/* Loading Odds... Section */
+.odds {
+    font-size: 18px;
+    color: #333;
+    margin-top: 10px;
+}
+
+/* Separator */
+hr {
+    border: none;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+}
+
+/* About Us Container */
+#about-us-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 2px solid #c9c9c9;
+}
+
+#about-us-container h1 {
+    color: #01549c;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#about-us-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Net Winnings Section */
+#net-winnings {
+    font-size: 24px;
+    margin: 20px 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Buttons */
+button {
+    background-color: rgb(0, 55, 87);
+    color: white;
+    font-size: 18px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
