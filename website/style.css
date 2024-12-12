@@ -177,6 +177,7 @@ label {
 }
 
 input[type="text"],
+input[type="email"],
 input[type="password"] {
     width: 100%;
     padding: 10px;
@@ -186,6 +187,8 @@ input[type="password"] {
     border-radius: 4px;
     box-sizing: border-box;
     font-size: 16px;
+    appearance: none;
+    /* Ensures consistent styles across all input types */
 }
 
 /* "Create an Account" Link Section */
