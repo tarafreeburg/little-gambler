@@ -44,7 +44,8 @@ li a:hover {
 }
 
 /* Page Headers */
-h1 {
+h1,
+h2 {
     font-size: 36px;
     text-align: center;
     color: #01549c;
@@ -122,7 +123,7 @@ hr {
 
 /* Net Winnings Section */
 #net-winnings {
-    font-size: 24px;
+    font-size: 48px;
     margin: 20px 0;
     text-align: center;
     font-weight: bold;
@@ -143,4 +144,84 @@ button {
 button:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Login Form */
+#login-form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 2px solid #c9c9c9;
+}
+
+#login-form h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #01549c;
+}
+
+.form-group {
+    margin: 15px 0;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+/* "Create an Account" Link Section */
+#create-account-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 16px;
+    color: #555;
+}
+
+#create-account-link a {
+    color: #01549c;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+#create-account-link a:hover {
+    color: #013d74;
+    text-shadow: 0px 0px 3px rgba(1, 84, 156, 0.7);
+}
+
+/* Registration Form */
+#registration-form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 2px solid #c9c9c9;
+}
+
+#registration-form h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #01549c;
 }
