@@ -1,0 +1,92 @@
+[
+  {
+    "value": "Draw",
+    "odd": 6.2,
+    "betAmount": 20,
+    "potentialWinnings": 124,
+    "homeTeam": "Arsenal",
+    "awayTeam": "Everton",
+    "fixtureId": 1208174,
+    "active": true
+  },
+  {
+    "value": "Away",
+    "odd": 5.6,
+    "betAmount": 100,
+    "potentialWinnings": 560,
+    "homeTeam": "Manchester City",
+    "awayTeam": "Manchester United",
+    "fixtureId": 1208178,
+    "active": true
+  },
+  {
+    "value": "Draw",
+    "odd": 3.5,
+    "betAmount": 10,
+    "potentialWinnings": 35,
+    "homeTeam": "Everton",
+    "awayTeam": "Wolves",
+    "fixtureId": 1208156,
+    "active": true
+  },
+  {
+    "value": "Draw",
+    "odd": 6,
+    "betAmount": 100,
+    "potentialWinnings": 600,
+    "homeTeam": "Southampton",
+    "awayTeam": "Chelsea",
+    "fixtureId": 1208162,
+    "active": true
+  },
+  {
+    "value": "Home",
+    "odd": 6,
+    "betAmount": 100,
+    "potentialWinnings": 600,
+    "homeTeam": "Leicester",
+    "awayTeam": "West Ham",
+    "fixtureId": 1208159,
+    "active": true
+  },
+  {
+    "value": "Draw",
+    "odd": 8,
+    "betAmount": 1000,
+    "potentialWinnings": 8000,
+    "homeTeam": "Ipswich",
+    "awayTeam": "Crystal Palace",
+    "fixtureId": 1208158,
+    "active": true
+  },
+  {
+    "value": "Away",
+    "odd": 15,
+    "betAmount": 600000,
+    "potentialWinnings": 9000000,
+    "homeTeam": "Arsenal",
+    "awayTeam": "Everton",
+    "fixtureId": 1208174,
+    "active": true
+  },
+  {
+    "value": "Home",
+    "odd": 1.58,
+    "betAmount": 20,
+    "potentialWinnings": 31.6,
+    "homeTeam": "Manchester City",
+    "awayTeam": "Manchester United",
+    "fixtureId": 1208178,
+    "active": true
+  },
+  {
+    "value": "Away",
+    "odd": 1.58,
+    "betAmount": 200,
+    "potentialWinnings": 316,
+    "homeTeam": "Everton",
+    "awayTeam": "Chelsea",
+    "fixtureId": 1208186,
+    "active": true
+  }
+]
