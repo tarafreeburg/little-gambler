@@ -1,6 +1,6 @@
 async function fetchBets() {
     try {
-        const response = await fetch('http://localhost:3000/bets-data');
+        const response = await fetch('https://juicy-sleepy-recorder.glitch.me/bets-data');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -110,7 +110,7 @@ async function checkGameResult(fixtureId) {
 
 async function removeBetFromFile(fixtureId) {
     try {
-        const response = await fetch('http://localhost:3000/remove-bet', {
+        const response = await fetch('https://juicy-sleepy-recorder.glitch.me/remove-bet', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -132,7 +132,7 @@ async function removeBetFromFile(fixtureId) {
 
 async function updateWinFile(netChange) {
     try {
-        const response = await fetch('http://localhost:3000/update-win', {
+        const response = await fetch('https://juicy-sleepy-recorder.glitch.me/update-win', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -153,7 +153,7 @@ async function updateWinFile(netChange) {
 
 // Example function to fetch bet data locally
 async function fetchBetsFromLocal() {
-    const response = await fetch('http://localhost:3000/bets-data');
+    const response = await fetch('https://juicy-sleepy-recorder.glitch.me/bets-data');
     if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
     }

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         console.log('Fetching net winnings...');
-        const response = await fetch('http://localhost:3000/get-net-winnings');
+        const response = await fetch('https://juicy-sleepy-recorder.glitch.me/get-net-winnings');
         if (!response.ok) {
             throw new Error('Failed to fetch net winnings');
         }

@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="icon" type="image/png" href="/images/favicon.png">
     <link rel="stylesheet" href="style.css">
     <title>User Authentication</title>
 </head>
+
 <body>
     <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="bets.html">Bets</a></li>
-        <li><a href="account.html">Account</a></li>
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/bets">Bets</a></li>
+        <li><a href="/account">Account</a></li>
     </ul>
 
     <div id="registration-form">
@@ -40,6 +42,11 @@
     <script>
         document.getElementById('register').addEventListener('submit', async (e) => {
             e.preventDefault();
+
+            const registerButton = e.target.querySelector('button');
+            registerButton.disabled = true;
+            registerButton.textContent = 'Registering...';
+
             const username = document.getElementById('username').value;
             const email = document.getElementById('email').value;
             const password = document.getElementById('password').value;
@@ -47,16 +54,16 @@
 
             if (password !== confirmPassword) {
                 alert('Passwords do not match!');
+                registerButton.disabled = false;
+                registerButton.textContent = 'Register';
                 return;
             }
 
             try {
-                const response = await fetch('/register', {
+                const response = await fetch('https://juicy-sleepy-recorder.glitch.me/register', {
                     method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ username, email, password })
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, email, password }),
                 });
 
                 const result = await response.json();
@@ -68,8 +75,13 @@
             } catch (error) {
                 console.error('Error:', error);
                 alert('Registration failed');
+            } finally {
+                registerButton.disabled = false;
+                registerButton.textContent = 'Register';
             }
         });
+
     </script>
 </body>
+
 </html>

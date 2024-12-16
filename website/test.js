@@ -2,15 +2,15 @@ const fixturesUrl = 'https://api-football-v1.p.rapidapi.com/v3/fixtures?league=3
 const apiOptions = {
     method: 'GET',
     headers: {
-        'x-rapidapi-key': '921908905cmshac2cc1ffdff44bbp18a0d4jsnc0818ea7d38f',
+        'x-rapidapi-key': '921908905cmshac2cc1ffdff44bbp18a0d4jsnc0818ea7d38f', // Use the key from your .env file
         'x-rapidapi-host': 'api-football-v1.p.rapidapi.com'
     }
 };
 
-// Fetch and display fixtures along with odds
+// Fetch fixtures from the server
 async function fetchAndDisplayData() {
     try {
-        const response = await fetch(fixturesUrl, apiOptions);
+        const response = await fetch('/api/fixtures');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -27,7 +27,6 @@ async function displayData(data) {
     container.innerHTML = "";
 
     for (const match of data.response) {
-
         const date = new Date(match.fixture.date); // Format date
         const formattedDate = date.toLocaleDateString();
         const formattedTime = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
@@ -51,12 +50,12 @@ async function displayData(data) {
     }
 }
 
-// Fetch odds for a specific fixture
+// Fetch odds for a specific fixture from the server
 async function fetchOdds(fixtureId, elementId, homeTeam, awayTeam) {
-    const oddsUrl = `https://api-football-v1.p.rapidapi.com/v3/odds?fixture=${fixtureId}&league=39&season=2024`;
+    const oddsUrl = `/api/odds/${fixtureId}`;
 
     try {
-        const response = await fetch(oddsUrl, apiOptions);
+        const response = await fetch(oddsUrl);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -84,7 +83,6 @@ async function fetchOdds(fixtureId, elementId, homeTeam, awayTeam) {
         document.getElementById(elementId).innerHTML = "Error fetching odds.";
     }
 }
-
 
 function showPrompt(value, odd, bookmaker, homeTeam, awayTeam, fixtureId) {
     let userResponse;
@@ -144,7 +142,7 @@ function showPrompt(value, odd, bookmaker, homeTeam, awayTeam, fixtureId) {
 
 async function saveBetToFile(betData) {
     try {
-        const response = await fetch('http://localhost:3000/bets', {
+        const response = await fetch('https://juicy-sleepy-recorder.glitch.me/api/bets', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
